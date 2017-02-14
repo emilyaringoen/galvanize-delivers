@@ -1,0 +1,28 @@
+
+nav {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+.brand-logo {
+  margin-left: 10px;
+}
+
+main {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+.hero {
+  background-image: url('/img/hero.jpg');
+  height: 55vh;
+}
+
+.descriptions {
+  width: 75vw;
+}
+
+.descriptions p{
+  padding: 1em;
+  text-align: left;
+}
