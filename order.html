@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -29,18 +31,19 @@
             </ul>
         </div>
     </nav>
-    <div col="row">
-        <div class="col s12 center-align">
-            <h3>Order Here</h3>
-        </div>
-    </div>
+
     <div class="container row">
-        <div class="col s8">
+        <div class="col s12 m8 l8">
+            <div col="row">
+                <div class="col s12 m8 l8 left-align">
+                    <h4>Menu</h4>
+                </div>
+            </div>
             <div class="row">
-                <div class="col s6">
+                <div class="col s12 m6 l6">
                     <div class="card">
                         <div class="card-image">
-                            <img src="img/burger.jpg">
+                            <img class="responsive-img" src="img/burger.jpg">
 
                             <a class="btn-floating halfway-fab waves-effect waves-light red" id="burger"><i class="material-icons">shopping_cart</i></a>
                         </div>
@@ -51,25 +54,10 @@
                     </div>
                 </div>
 
-
-                <div class="col s6">
+                <div class="col s12 m6 l6">
                     <div class="card">
                         <div class="card-image">
-                            <img src="img/pizza.jpg">
-                            <a class="btn-floating halfway-fab waves-effect waves-light red" id="pizza"><i class="material-icons">shopping_cart</i></a>
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Arugula Pizza Pie</span>
-                            <p>$14.99</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s6">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="img/ribs.jpg">
+                            <img class="responsive-img" src="img/ribs.jpg">
                             <a class="btn-floating halfway-fab waves-effect waves-light red" id="ribs"><i class="material-icons">shopping_cart</i></a>
                         </div>
                         <div class="card-content">
@@ -79,11 +67,26 @@
                     </div>
                 </div>
 
+            </div>
+            <div class="row">
+              <div class="col s12 m6 l6">
+                  <div class="card">
+                      <div class="card-image">
+                          <img class="responsive-img" src="img/pizza.jpg">
+                          <a class="btn-floating halfway-fab waves-effect waves-light red" id="pizza"><i class="material-icons">shopping_cart</i></a>
+                      </div>
+                      <div class="card-content">
+                          <span class="card-title">Arugula Pizza Pie</span>
+                          <p>$14.99</p>
+                      </div>
+                  </div>
+              </div>
 
-                <div class="col s6">
+
+                <div class="col s12 m6 l6">
                     <div class="card">
                         <div class="card-image">
-                            <img src="img/ice_cream.jpg">
+                            <img class="responsive-img" src="img/ice_cream.jpg">
 
                             <a class="btn-floating halfway-fab waves-effect waves-light red" id="iceCream"><i class="material-icons">shopping_cart</i></a>
                         </div>
@@ -95,22 +98,78 @@
                 </div>
             </div>
         </div>
-        <div class="col s4">
+
+        <div class="col s12 m4 l4 center-align">
+            <div col="row">
+                <div class="col s12 m4 l4 left-align">
+                    <h4>Order</h4>
+                </div>
+            </div>
             <table>
                 <thead>
                     <tr>
                         <th class="item">Item Name</th>
-                        <th class="price">Item Price</th>
+                        <th class="price right-align">Item Price</th>
                     </tr>
                 </thead>
 
                 <tbody>
                 </tbody>
-              <tfoot>
-              </tfoot>
+                <tfoot>
+                    <tr>
+                        <td class="tax">Tax:</td>
+                        <td class="taxAmount right-align"></td>
+                    </tr>
+                    <tr>
+                        <td class="total"><strong>Total:</strong></td>
+                        <td class="totalAmount right-align"></td>
+                    </tr>
+                </tfoot>
             </table>
+            <div class='row'>
+                <div class='col s12'>
+                  <a id="delete" class="waves-effect waves-light white btn red-text">button</a>
+
+                </div>
+            </div>
         </div>
+
+        <form class="col s12 m4 l4 center-align">
+            <div class="row">
+                <div class="input-field col s2">
+                    <i class="1rem material-icons gray-text">person_pin</i>
+                </div>
+                <div class="input-field col s10">
+                    <input id="name" type="text" class="validate" placeholder="Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s2">
+                    <i class="1rem material-icons gray-text">store</i>
+                </div>
+                <div class="input-field col s10">
+                    <input id="street" type="text" class="validate" placeholder="Address">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s2">
+                    <i class="1rem material-icons gray-text">call</i>
+                </div>
+                <div class="input-field col s10">
+                    <input id="phone" type="text" class="validate" placeholder="Phone Number">
+                </div>
+            </div>
+            <!-- -->
+            <div class='row'>
+                <div class='col s12'>
+                    <button class="btn waves-effect waves-light right-align white red-text" type="submit" name="action" id="submit">Submit Order</button>
+                </div>
+            </div>
+        </form>
+
     </div>
+
+
 
     <footer class="page-footer red darken-4">
         <div class="container">
